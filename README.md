@@ -7,6 +7,8 @@
 - Institution: Prince of Songkla University
 - Department: Computer Engineering
 - Degree: Master
+## Presentation
+- Canva: https://www.canva.com/design/DAGT1j1-C84/Bgz2iX7lCsmSbHWmt4AItg/view?utm_content=DAGT1j1-C84&utm_campaign=designshare&utm_medium=link&utm_source=editor
 ## Environment
 - Python Version: 3.12.0
 - Library: numpy, pandas, scikit-learn, matplotlib, time, wraps
