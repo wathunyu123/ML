@@ -17,5 +17,5 @@
 - .venv\bin\Activate.ps1
 ### MacOS / Linux
 - source .venv/bin/activate
-### DeActive
+## DeActive
 - deactive
