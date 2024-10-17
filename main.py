@@ -8,12 +8,10 @@ from modules.hist import plot_histograms
 from modules.import_data import import_data
 from modules.neural_network import neural_net
 from modules.random_forest import random_forest
+from modules.svm import svm_regression
 from modules.show_detail import show_detail
 from modules.apply import apply_ceiling_and_convert
 from sklearn.model_selection import train_test_split
-
-from modules.svm import svm_regression
-
 
 if __name__ == "__main__":
     # Declare Path
