@@ -9,3 +9,13 @@
 - Department: Computer Engineering
 - Degree: Master
 ---
+## Active
+### Windows
+#### In cmd.exe
+- .venv\bin\activate.bat
+#### In PowerShell
+- .venv\bin\Activate.ps1
+### MacOS / Linux
+- source .venv/bin/activate
+### DeActive
+- deactive
