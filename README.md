@@ -182,6 +182,7 @@ predictions_by_age_nn = apply_ceiling_and_convert(predictions_df=predictions_by_
 > [!NOTE]
 > The data training section demonstrates the process of building and training a Neural Network model for predictive modeling. By using the prepared features and target variables, the Neural Network learns to identify complex patterns and relationships in the data, enabling it to make accurate predictions on new, unseen data.
 ## Error Comparison
+The error measurement comparison section evaluates the performance of the three models (Random Forest, SVM, and Neural Network) by calculating and comparing various error metrics.
 ```python
 # Make predictions on the test set for Random Forest
 y_pred_rf = model_rf.predict(X_test)
@@ -207,3 +208,22 @@ mse_nn = mean_squared_error(y_test, y_pred_nn)
 rmse_nn = mean_squared_error(y_test, y_pred_nn)
 mae_nn = mean_absolute_error(y_test, y_pred_nn)
 ```
+#### Key Steps:
+1. Predictions on Test Set: The trained models (model_rf, model_svm, model_nn) are used to make predictions on the testing set (X_test). The predicted values are stored in y_pred_rf, y_pred_svm, and y_pred_nn respectively.
+2. Error Metric Calculation: The following error metrics are calculated for each model:
+    * Mean Squared Error (MSE): Measures the average squared difference between the predicted and actual values. Lower MSE indicates better model performance.   
+    * Root Mean Squared Error (RMSE): The square root of the MSE, providing a more interpretable measure of error in the same units as the target variable.   
+    * Mean Absolute Error (MAE): Measures the average absolute difference between the predicted and actual values. MAE is less sensitive to outliers compared to MSE.
+#### Error Metric Formulas:
+> [!IMPORTANT]
+> * MSE = 1/n * Σ(yi - ŷi)^2
+> * RMSE = √(MSE)
+> * MAE = 1/n * Σ|yi - ŷi|
+> Where:
+> n is the number of data points
+> yi is the actual value
+> ŷi is the predicted value
+The calculated error metrics for each model are compared to assess their relative performance. A lower value for any of the metrics generally indicates a better-performing model.
+#### Conclusion
+> [!NOTE]
+> The error measurement comparison section provides valuable insights into the accuracy and effectiveness of the different models. By comparing the error metrics, it helps in selecting the most suitable model for the given task and identifying areas for improvement.
