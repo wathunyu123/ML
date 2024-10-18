@@ -12,6 +12,7 @@
 ## Environment
 - Python Version: 3.12.0
 - Library: numpy, pandas, scikit-learn, matplotlib, time, wraps
+- pip install -r requirements.txt
 ## Active
 ### Windows
 #### In cmd.exe
