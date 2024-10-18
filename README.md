@@ -51,7 +51,8 @@ transcode_counts_by_age = transcode_counts_by_age.fillna(0)
 6. Grouping and Aggregation: The data is grouped by YearMonth, AgeRange, and TransCode using groupby. This creates a hierarchical grouping structure. The size() function is used to count the number of occurrences within each group, providing transaction counts for different age ranges, transaction codes, and time periods.
 7. Missing Value Handling: The fillna(0) method is used to replace missing values in the grouped DataFrame with 0. This ensures that all groups have a count, even if there are no transactions for a particular combination of YearMonth, AgeRange, and TransCode.
 #### Conclusion
-The data transformation process ensures that the data is in a suitable format for subsequent analysis and modeling. By cleaning, structuring, and creating relevant features, the data becomes more informative and valuable for answering research questions or making data-driven decisions.
+> [!NOTE]
+> The data transformation process ensures that the data is in a suitable format for subsequent analysis and modeling. By cleaning, structuring, and creating relevant features, the data becomes more informative and valuable for answering research questions or making data-driven decisions.
 ## Data Preparation
 The data preparation section focuses on transforming the data into a suitable format for machine learning modeling. This involves encoding categorical variables, creating a feature matrix and target vector, and splitting the data into training and testing sets.
 ```python
@@ -82,7 +83,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 5. Target Vector Creation: The target variables are extracted from the transcode_counts_by_age DataFrame and stored in the y variable. This represents the output that the model will learn to predict.
 6. Data Splitting: The data is divided into training and testing sets using train_test_split. This allows for evaluating the model's performance on unseen data and preventing overfitting. The test_size parameter specifies the proportion of data allocated to the testing set (20% in this case).
 #### Conclusion
-The data preparation process ensures that the data is in a format that is compatible with machine learning algorithms. By encoding categorical variables, creating features and targets, and splitting the data, the dataset becomes ready for training and evaluation of predictive models.
+> [!NOTE]
+> The data preparation process ensures that the data is in a format that is compatible with machine learning algorithms. By encoding categorical variables, creating features and targets, and splitting the data, the dataset becomes ready for training and evaluation of predictive models.
 ## Data Training
 ### Random Forest (RF)
 The data training section focuses on building and training a Random Forest model to predict the target variables using the prepared features.
@@ -101,19 +103,20 @@ predictions_by_age_rf = apply_ceiling_and_convert(predictions_df=predictions_by_
 ```
 #### Key Steps:
 1. Function Call: The random_forest function is called to create and train the Random Forest model. This function takes several inputs:
-** transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
-** labels: The labels or categories associated with the target variables.
-** target_columns: The columns representing the target variables that the model will predict.
-** model_rf: The Random Forest model object itself.
-** X_train: The training set feature matrix containing the input features.
-** X_test: The testing set feature matrix containing the input features.
-** y_train: The training set target vector containing the true values of the target variables.
-** y_test: The testing set target vector containing the true values of the target variables.
+    * transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
+    * labels: The labels or categories associated with the target variables.
+    * target_columns: The columns representing the target variables that the model will predict.
+    * model_rf: The Random Forest model object itself.
+    * X_train: The training set feature matrix containing the input features.
+    * X_test: The testing set feature matrix containing the input features.
+    * y_train: The training set target vector containing the true values of the target variables.
+    * y_test: The testing set target vector containing the true values of the target variables.
 2. Model Training: The random_forest function trains the Random Forest model using the provided training data (X_train and y_train). This involves constructing multiple decision trees and combining their predictions to improve accuracy and reduce overfitting.
 3. Predictions: Once the model is trained, it is used to make predictions on the testing set (X_test). The predicted values are stored in the predictions_by_age_rf variable.
 4. Post-Processing: The apply_ceiling_and_convert function is applied to the predicted values. This step may involve rounding the predictions up to the nearest integer or converting them to a specific data type, depending on the nature of the target variables.
 #### Conclusion
-The data training section demonstrates the process of building and training a Random Forest model for predictive modeling. By using the prepared features and target variables, the model learns to identify patterns and relationships in the data, enabling it to make accurate predictions on new, unseen data.
+> [!NOTE]
+> The data training section demonstrates the process of building and training a Random Forest model for predictive modeling. By using the prepared features and target variables, the model learns to identify patterns and relationships in the data, enabling it to make accurate predictions on new, unseen data.
 ### Support Vector Machine (SVM)
 The data training section focuses on building and training a Support Vector Machine (SVM) model to predict the target variables using the prepared features.
 ```python
@@ -131,19 +134,20 @@ predictions_by_age_svm = apply_ceiling_and_convert(predictions_df=predictions_by
 ```
 #### Key Steps:
 1. Function Call: The svm_regression function is called to create and train the SVM model. This function takes similar inputs as the random_forest function, including:
-** transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
-** labels: The labels or categories associated with the target variables.
-** target_columns: The columns representing the target variables that the model will predict.
-** model_svm: The SVM model object itself.
-** X_train: The training set feature matrix containing the input features.
-** X_test: The testing set feature matrix containing the input features.
-** y_train: The training set target vector containing the true values of the target variables.
-** y_test: The testing set target vector containing the true values of the target variables.
+    * transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
+    * labels: The labels or categories associated with the target variables.
+    * target_columns: The columns representing the target variables that the model will predict.
+    * model_svm: The SVM model object itself.
+    * X_train: The training set feature matrix containing the input features.
+    * X_test: The testing set feature matrix containing the input features.
+    * y_train: The training set target vector containing the true values of the target variables.
+    * y_test: The testing set target vector containing the true values of the target variables.
 2. Model Training: The svm_regression function trains the SVM model using the provided training data (X_train and y_train). SVM models find a hyperplane that separates the data into different classes or predicts a continuous value based on the input features.
 3. Predictions: Once the model is trained, it is used to make predictions on the testing set (X_test). The predicted values are stored in the predictions_by_age_svm variable.
 4. Post-Processing: The apply_ceiling_and_convert function is applied to the predicted values. This step may involve rounding the predictions up to the nearest integer or converting them to a specific data type, depending on the nature of the target variables.
 #### Conclusion
-The data training section demonstrates the process of building and training an SVM model for predictive modeling. By using the prepared features and target variables, the SVM model learns to identify patterns and relationships in the data, enabling it to make accurate predictions on new, unseen data.
+> [!NOTE]
+> The data training section demonstrates the process of building and training an SVM model for predictive modeling. By using the prepared features and target variables, the SVM model learns to identify patterns and relationships in the data, enabling it to make accurate predictions on new, unseen data.
 ### Neural Network (NN)
 The data training section focuses on building and training a Neural Network (NN) model to predict the target variables using the prepared features.
 ```python
@@ -162,20 +166,21 @@ predictions_by_age_nn = apply_ceiling_and_convert(predictions_df=predictions_by_
 ```
 #### Key Steps:
 1. Function Call: The neural_net function is called to create and train the Neural Network model. This function takes similar inputs as the previous models, including:
-** transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
-** labels: The labels or categories associated with the target variables.
-** target_columns: The columns representing the target variables that the model will predict.
-** model_nn: The Neural Network model object itself.
-** X_train: The training set feature matrix containing the input features.
-** X_test: The testing set feature matrix containing the input features.
-** y_train: The training set target vector containing the true values of the target variables.
-** y_test: The testing set target vector containing the true values of the target variables.
-** epochs: The number of training iterations or epochs to be performed.
+    * transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
+    * labels: The labels or categories associated with the target variables.
+    * target_columns: The columns representing the target variables that the model will predict.
+    * model_nn: The Neural Network model object itself.
+    * X_train: The training set feature matrix containing the input features.
+    * X_test: The testing set feature matrix containing the input features.
+    * y_train: The training set target vector containing the true values of the target variables.
+    * y_test: The testing set target vector containing the true values of the target variables.
+    * epochs: The number of training iterations or epochs to be performed.
 2. Model Training: The neural_net function trains the Neural Network model using the provided training data (X_train and y_train). Neural Networks are composed of interconnected layers of neurons that learn complex patterns and relationships in the data. The training process involves adjusting the weights and biases of these neurons to minimize the error between the predicted and actual values.
 3. Predictions: Once the model is trained, it is used to make predictions on the testing set (X_test). The predicted values are stored in the predictions_by_age_nn variable.
 4. Post-Processing: The apply_ceiling_and_convert function is applied to the predicted values. This step may involve rounding the predictions up to the nearest integer or converting them to a specific data type, depending on the nature of the target variables.
 #### Conclusion
-The data training section demonstrates the process of building and training a Neural Network model for predictive modeling. By using the prepared features and target variables, the Neural Network learns to identify complex patterns and relationships in the data, enabling it to make accurate predictions on new, unseen data.
+> [!NOTE]
+> The data training section demonstrates the process of building and training a Neural Network model for predictive modeling. By using the prepared features and target variables, the Neural Network learns to identify complex patterns and relationships in the data, enabling it to make accurate predictions on new, unseen data.
 ## Error Comparison
 ```python
 # Make predictions on the test set for Random Forest
