@@ -23,6 +23,8 @@
 - source .venv/bin/activate
 ## DeActive
 - deactive
+## Usage
+- python main.py
 ## Data Transformation
 The data transformation section is responsible for cleaning, structuring, and preparing the raw data for analysis. This involves converting data types, creating new features, and handling missing values to ensure data consistency and accuracy.
 ```python
