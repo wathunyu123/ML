@@ -216,13 +216,13 @@ mae_nn = mean_absolute_error(y_test, y_pred_nn)
     * Mean Absolute Error (MAE): Measures the average absolute difference between the predicted and actual values. MAE is less sensitive to outliers compared to MSE.
 #### Error Metric Formulas:
 > [!IMPORTANT]
-> * MSE = 1/n * Σ(yi - ŷi)^2__
-> * RMSE = √(MSE)__
-> * MAE = 1/n * Σ|yi - ŷi|__
-> Where:__
-> n is the number of data points__
-> yi is the actual value__
-> ŷi is the predicted value
+> * MSE = 1/n * Σ(yi - ŷi)^2
+> * RMSE = √(MSE)
+> * MAE = 1/n * Σ|yi - ŷi|
+> - Where:
+> * n is the number of data points
+> * yi is the actual value
+> * ŷi is the predicted value
 The calculated error metrics for each model are compared to assess their relative performance. A lower value for any of the metrics generally indicates a better-performing model.
 #### Conclusion
 > [!NOTE]
