@@ -223,7 +223,7 @@ mae_nn = mean_absolute_error(y_test, y_pred_nn)
 > * n is the number of data points
 > * yi is the actual value
 > * ŷi is the predicted value
-The calculated error metrics for each model are compared to assess their relative performance. A lower value for any of the metrics generally indicates a better-performing model.
+`The calculated error metrics for each model are compared to assess their relative performance. A lower value for any of the metrics generally indicates a better-performing model.`
 #### Conclusion
 > [!NOTE]
 > The error measurement comparison section provides valuable insights into the accuracy and effectiveness of the different models. By comparing the error metrics, it helps in selecting the most suitable model for the given task and identifying areas for improvement.
