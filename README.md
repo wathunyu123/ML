@@ -62,3 +62,73 @@ y.columns = y.columns.astype(str)
 # Split the data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 ```
+## Data Training
+### Random Forest (RF)
+```python
+predictions_by_age_rf, model_rf = random_forest(
+    transcode_counts_by_age=transcode_counts_by_age,
+    labels=labels,
+    target_columns=target_columns,
+    model_rf=model_rf,
+    X_train=X_train,
+    X_test=X_test,
+    y_train=y_train,
+    y_test=y_test,
+)
+predictions_by_age_rf = apply_ceiling_and_convert(predictions_df=predictions_by_age_rf)
+```
+### Support Vector Machine (SVM)
+```python
+predictions_by_age_svm, model_svm = svm_regression(
+    transcode_counts_by_age=transcode_counts_by_age,
+    labels=labels,
+    target_columns=target_columns,
+    model_svm=model_svm,
+    X_train=X_train,
+    X_test=X_test,
+    y_train=y_train,
+    y_test=y_test,
+)
+predictions_by_age_svm = apply_ceiling_and_convert(predictions_df=predictions_by_age_svm)
+```
+### Neural Network (NN)
+```python
+predictions_by_age_nn, model_nn = neural_net(
+    transcode_counts_by_age=transcode_counts_by_age,
+    labels=labels,
+    target_columns=target_columns,
+    model_nn=model_nn,
+    X_train=X_train,
+    X_test=X_test,
+    y_train=y_train,
+    y_test=y_test,
+    epochs=10000,
+)
+predictions_by_age_nn = apply_ceiling_and_convert(predictions_df=predictions_by_age_nn)
+```
+## Error Comparison
+```python
+# Make predictions on the test set for Random Forest
+y_pred_rf = model_rf.predict(X_test)
+
+# Calculate error metrics for Random Forest
+mse_rf = mean_squared_error(y_test, y_pred_rf)
+rmse_rf = mean_squared_error(y_test, y_pred_rf)
+mae_rf = mean_absolute_error(y_test, y_pred_rf)
+
+# Make predictions on the test set for SVM
+y_pred_svm = model_svm.predict(X_test)
+
+# Calculate error metrics for Neural Network
+mse_svm = mean_squared_error(y_test, y_pred_svm)
+rmse_svm = mean_squared_error(y_test, y_pred_svm)
+mae_svm = mean_absolute_error(y_test, y_pred_svm)
+
+# Make predictions on the test set for Neural Network
+y_pred_nn = model_nn.predict(X_test.astype(float))
+
+# Calculate error metrics for Neural Network
+mse_nn = mean_squared_error(y_test, y_pred_nn)
+rmse_nn = mean_squared_error(y_test, y_pred_nn)
+mae_nn = mean_absolute_error(y_test, y_pred_nn)
+```
