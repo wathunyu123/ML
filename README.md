@@ -220,9 +220,9 @@ mae_nn = mean_absolute_error(y_test, y_pred_nn)
 > * RMSE = √(MSE)
 > * MAE = 1/n * Σ|yi - ŷi|
 > - Where:
-> * n is the number of data points
-> * yi is the actual value
-> * ŷi is the predicted value
+>     * `n` is the number of data points
+>     * `yi` is the actual value
+>     * `ŷi` is the predicted value
 
 The calculated error metrics for each model are compared to assess their relative performance. A lower value for any of the metrics generally indicates a better-performing model.
 #### Conclusion
