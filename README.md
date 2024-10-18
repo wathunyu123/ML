@@ -10,7 +10,7 @@
 ## Presentation
 - Canva: https://www.canva.com/design/DAGT1j1-C84/Bgz2iX7lCsmSbHWmt4AItg/view?utm_content=DAGT1j1-C84&utm_campaign=designshare&utm_medium=link&utm_source=editor
 ## Environment
-- Python Version: 3.12.0
+- Python Version: 3.12.6
 - Library: numpy, pandas, scikit-learn, matplotlib, time, wraps
 - pip install -r requirements.txt
 ## Active
