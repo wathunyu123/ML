@@ -43,13 +43,13 @@ all_age_ranges = pd.Categorical(labels, categories=labels, ordered=True)
 transcode_counts_by_age = transcode_counts_by_age.fillna(0)
 ```
 #### Key Steps:
-1. Data Concatenation: The code combines multiple datasets (data2564, data2565, data2566, data2567) into a single DataFrame named combined_data. This allows for unified analysis across different data sources.
-2. Date Conversion: The Tran_Date and Birth_date columns are converted to datetime format using `pd.to_datetime`. This enables date-based calculations and analysis.
-3. Age Calculation: The Age column is calculated by subtracting the birthdate from the transaction date and dividing by 365.25 (to account for leap years). This provides the age of the individual at the time of the transaction.
-4. Age Range Categorization: Age ranges are defined using pd.cut to categorize individuals into groups based on their age. This creates a new column AgeRange with categories such as `'0-18'`, `'19-30'`, `'31-40'`, etc.
-5. Year-Month Extraction: The YearMonth column is extracted from the Tran_Date to group data by month and year. This allows for time-series analysis and trend identification.
-6. Grouping and Aggregation: The data is grouped by `YearMonth`, `AgeRange`, and `TransCode` using groupby. This creates a hierarchical grouping structure. The size() function is used to count the number of occurrences within each group, providing transaction counts for different age ranges, transaction codes, and time periods.
-7. Missing Value Handling: The `fillna(0)` method is used to replace missing values in the grouped DataFrame with 0. This ensures that all groups have a count, even if there are no transactions for a particular combination of YearMonth, AgeRange, and TransCode.
+1. Data Concatenation: The code combines multiple datasets (`data2564`, `data2565`, `data2566`, `data2567`) into a single DataFrame named `combined_data`. This allows for unified analysis across different data sources.
+2. Date Conversion: The `Tran_Date` and `Birth_date` columns are converted to datetime format using `pd.to_datetime`. This enables date-based calculations and analysis.
+3. Age Calculation: The Age column is calculated by subtracting the birthdate from the transaction date and dividing by `365.25` (to account for leap years). This provides the age of the individual at the time of the transaction.
+4. Age Range Categorization: Age ranges are defined using `pd.cut` to categorize individuals into groups based on their age. This creates a new column `AgeRange` with categories such as `'0-18'`, `'19-30'`, `'31-40'`, etc.
+5. Year-Month Extraction: The `YearMonth` column is extracted from the `Tran_Date` to group data by month and year. This allows for time-series analysis and trend identification.
+6. Grouping and Aggregation: The data is grouped by `YearMonth`, `AgeRange`, and `TransCode` using groupby. This creates a hierarchical grouping structure. The `size()` function is used to count the number of occurrences within each group, providing transaction counts for different age ranges, transaction codes, and time periods.
+7. Missing Value Handling: The `fillna(0)` method is used to replace missing values in the grouped DataFrame with `0`. This ensures that all groups have a count, even if there are no transactions for a particular combination of `YearMonth`, `AgeRange`, and `TransCode`.
 #### Conclusion
 > [!NOTE]
 > The data transformation process ensures that the data is in a suitable format for subsequent analysis and modeling. By cleaning, structuring, and creating relevant features, the data becomes more informative and valuable for answering research questions or making data-driven decisions.
@@ -78,7 +78,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 #### Key Steps:
 1. Data Resetting: The `reset_index()` method is applied to the `transcode_counts_by_age` DataFrame to ensure that the index is reset to a simple integer index, which is often required for subsequent operations.
 2. Data Type Conversion: The YearMonth column is converted to a string data type using `astype(str)`. This is necessary for certain machine learning algorithms that require categorical features to be represented as strings.
-3. One-Hot Encoding: Categorical variables, such as AgeRange, are converted into numerical representations using one-hot encoding. This creates new binary columns for each category, indicating the presence or absence of that category. The pd.get_dummies function is used for this purpose, with the `drop_first=True` parameter to avoid redundant columns.
+3. One-Hot Encoding: Categorical variables, such as AgeRange, are converted into numerical representations using one-hot encoding. This creates new binary columns for each category, indicating the presence or absence of that category. The `pd.get_dummies` function is used for this purpose, with the `drop_first=True` parameter to avoid redundant columns.
 4. Feature Matrix Creation: The encoded categorical variables and the original transaction count columns (from `transcode_counts_by_age`) are combined into a single feature matrix `X`. This matrix represents the input features that will be used to predict the target variables.
 5. Target Vector Creation: The target variables are extracted from the `transcode_counts_by_age` DataFrame and stored in the y variable. This represents the output that the model will learn to predict.
 6. Data Splitting: The data is divided into training and testing sets using `train_test_split`. This allows for evaluating the model's performance on unseen data and preventing overfitting. The test_size parameter specifies the proportion of data allocated to the testing set (20% in this case).
