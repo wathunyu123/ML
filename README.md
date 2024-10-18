@@ -101,14 +101,14 @@ predictions_by_age_rf = apply_ceiling_and_convert(predictions_df=predictions_by_
 ```
 #### Key Steps:
 1. Function Call: The random_forest function is called to create and train the Random Forest model. This function takes several inputs:
-* transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
-* labels: The labels or categories associated with the target variables.
-* target_columns: The columns representing the target variables that the model will predict.
-* model_rf: The Random Forest model object itself.
-* X_train: The training set feature matrix containing the input features.
-* X_test: The testing set feature matrix containing the input features.
-* y_train: The training set target vector containing the true values of the target variables.
-* y_test: The testing set target vector containing the true values of the target variables.
+** transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
+** labels: The labels or categories associated with the target variables.
+** target_columns: The columns representing the target variables that the model will predict.
+** model_rf: The Random Forest model object itself.
+** X_train: The training set feature matrix containing the input features.
+** X_test: The testing set feature matrix containing the input features.
+** y_train: The training set target vector containing the true values of the target variables.
+** y_test: The testing set target vector containing the true values of the target variables.
 2. Model Training: The random_forest function trains the Random Forest model using the provided training data (X_train and y_train). This involves constructing multiple decision trees and combining their predictions to improve accuracy and reduce overfitting.
 3. Predictions: Once the model is trained, it is used to make predictions on the testing set (X_test). The predicted values are stored in the predictions_by_age_rf variable.
 4. Post-Processing: The apply_ceiling_and_convert function is applied to the predicted values. This step may involve rounding the predictions up to the nearest integer or converting them to a specific data type, depending on the nature of the target variables.
@@ -131,14 +131,14 @@ predictions_by_age_svm = apply_ceiling_and_convert(predictions_df=predictions_by
 ```
 #### Key Steps:
 1. Function Call: The svm_regression function is called to create and train the SVM model. This function takes similar inputs as the random_forest function, including:
-* transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
-* labels: The labels or categories associated with the target variables.
-* target_columns: The columns representing the target variables that the model will predict.
-* model_svm: The SVM model object itself.
-* X_train: The training set feature matrix containing the input features.
-* X_test: The testing set feature matrix containing the input features.
-* y_train: The training set target vector containing the true values of the target variables.
-* y_test: The testing set target vector containing the true values of the target variables.
+** transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
+** labels: The labels or categories associated with the target variables.
+** target_columns: The columns representing the target variables that the model will predict.
+** model_svm: The SVM model object itself.
+** X_train: The training set feature matrix containing the input features.
+** X_test: The testing set feature matrix containing the input features.
+** y_train: The training set target vector containing the true values of the target variables.
+** y_test: The testing set target vector containing the true values of the target variables.
 2. Model Training: The svm_regression function trains the SVM model using the provided training data (X_train and y_train). SVM models find a hyperplane that separates the data into different classes or predicts a continuous value based on the input features.
 3. Predictions: Once the model is trained, it is used to make predictions on the testing set (X_test). The predicted values are stored in the predictions_by_age_svm variable.
 4. Post-Processing: The apply_ceiling_and_convert function is applied to the predicted values. This step may involve rounding the predictions up to the nearest integer or converting them to a specific data type, depending on the nature of the target variables.
@@ -162,15 +162,15 @@ predictions_by_age_nn = apply_ceiling_and_convert(predictions_df=predictions_by_
 ```
 #### Key Steps:
 1. Function Call: The neural_net function is called to create and train the Neural Network model. This function takes similar inputs as the previous models, including:
-* transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
-* labels: The labels or categories associated with the target variables.
-* target_columns: The columns representing the target variables that the model will predict.
-* model_nn: The Neural Network model object itself.
-* X_train: The training set feature matrix containing the input features.
-* X_test: The testing set feature matrix containing the input features.
-* y_train: The training set target vector containing the true values of the target variables.
-* y_test: The testing set target vector containing the true values of the target variables.
-* epochs: The number of training iterations or epochs to be performed.
+** transcode_counts_by_age: The DataFrame containing the transaction counts for different age ranges, transaction codes, and time periods.
+** labels: The labels or categories associated with the target variables.
+** target_columns: The columns representing the target variables that the model will predict.
+** model_nn: The Neural Network model object itself.
+** X_train: The training set feature matrix containing the input features.
+** X_test: The testing set feature matrix containing the input features.
+** y_train: The training set target vector containing the true values of the target variables.
+** y_test: The testing set target vector containing the true values of the target variables.
+** epochs: The number of training iterations or epochs to be performed.
 2. Model Training: The neural_net function trains the Neural Network model using the provided training data (X_train and y_train). Neural Networks are composed of interconnected layers of neurons that learn complex patterns and relationships in the data. The training process involves adjusting the weights and biases of these neurons to minimize the error between the predicted and actual values.
 3. Predictions: Once the model is trained, it is used to make predictions on the testing set (X_test). The predicted values are stored in the predictions_by_age_nn variable.
 4. Post-Processing: The apply_ceiling_and_convert function is applied to the predicted values. This step may involve rounding the predictions up to the nearest integer or converting them to a specific data type, depending on the nature of the target variables.
